@@ -1,0 +1,209 @@
+/* styles.css */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eef;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  #game-container {
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    background: #f0f8ff;
+    border-radius: 10px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Cloud Boss */
+  #cloud-boss {
+    position: relative;
+    background: linear-gradient(135deg, #87ceeb, #1e90ff);
+    border-radius: 50%;
+    width: 200px;
+    height: 120px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #fff;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    animation: float 3s infinite ease-in-out;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  #cloud-health {
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Question Box */
+  #question-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    margin: 20px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Answer Zone */
+  #answer-zone {
+    background: #f9f9f9;
+    border: 3px dashed #aaa;
+    height: 100px;
+    margin: 20px 0;
+    line-height: 100px;
+    font-size: 18px;
+    color: #666;
+    border-radius: 10px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  #answer-zone:hover, #answer-zone.dragover {
+    background-color: #e0f7fa;
+    box-shadow: 0px 4px 10px rgba(0, 128, 128, 0.3);
+    color: #333;
+  }
+  
+  /* Answer Cards */
+  #answer-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  
+  .card {
+    background: linear-gradient(135deg, #ffffff, #f1f1f1);
+    padding: 15px 10px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    cursor: grab;
+    font-weight: bold;
+    user-select: none;
+    width: calc(30% - 20px);
+    min-width: 120px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card:active {
+    cursor: grabbing;
+    transform: scale(0.95);
+  }
+  
+  /* Result Message */
+  #result-message {
+    font-size: 20px;
+    margin-top: 20px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #result-message.correct {
+    color: #4caf50; /* Green for correct */
+  }
+  
+  #result-message.wrong {
+    color: #f44336; /* Red for wrong */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    #answer-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card {
+      width: 80%;
+    }
+  }
+
+  /* Player Info Section */
+#player-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px 0;
+  }
+  
+  #health-bar {
+    position: relative;
+    width: 70%;
+    height: 20px;
+    background: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-right: 20px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  #health-fill {
+    height: 100%;
+    width: 100%; /* Full width initially */
+    background: linear-gradient(135deg, #4caf50, #81c784);
+    transition: width 0.3s ease-in-out;
+  }
+  
+  #score {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .try-again {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.try-again:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.try-again:active {
+    transform: scale(0.95);
+}

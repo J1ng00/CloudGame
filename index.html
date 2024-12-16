@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud Boss Battle</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-container">
+    <div id="cloud-boss">
+      <p id="cloud-health">Health: 100</p>
+    </div>
+    <div id="question-box">
+      <p id="question-text">What does AI stand for?</p>
+    </div>
+    <div id="answer-zone">Drop Your Answer Here</div>
+    <div id="answer-cards">
+      <div class="card" draggable="true" data-answer="Artificial Intelligence">Artificial Intelligence</div>
+      <div class="card" draggable="true" data-answer="Algorithm Insight">Algorithm Insight</div>
+      <div class="card" draggable="true" data-answer="Automated Interface">Automated Interface</div>
+    </div>
+    <div id="result-message"></div>
+    <div id="player-info">
+      <div id="health-bar">
+        <div id="health-fill"></div>
+      </div>
+      <p id="score">Score: 0</p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
